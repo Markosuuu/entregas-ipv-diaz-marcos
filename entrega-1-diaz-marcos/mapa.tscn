@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dx26o66rtm6ba"]
+
+[ext_resource type="PackedScene" uid="uid://diqitdvf3i5bf" path="res://player.tscn" id="1_2jh14"]
+[ext_resource type="Texture2D" uid="uid://cdpnunnkclow" path="res://resources/background.png" id="1_70f7c"]
+[ext_resource type="Texture2D" uid="uid://cnpg1wijlis55" path="res://resources/floor.png" id="2_q8ihy"]
+
+[node name="Node2D" type="Node2D" unique_id=1301846555]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=813673109]
+position = Vector2(576.5, 324)
+scale = Vector2(1.43875, 1.08)
+texture = ExtResource("1_70f7c")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1793731596]
+position = Vector2(576.00006, 514.5)
+scale = Vector2(17.515152, 4.0454545)
+texture = ExtResource("2_q8ihy")
+
+[node name="Node2D" parent="." unique_id=179048151 instance=ExtResource("1_2jh14")]
+position = Vector2(555, 350)
