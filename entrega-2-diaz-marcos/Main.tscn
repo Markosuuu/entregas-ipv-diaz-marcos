@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://ctoox04im12rx" path="res://main.gd" id="1_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://bnchqqn0xduh3" path="res://assets/textures/background.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://ccjh23opjwx24" path="res://assets/textures/floor.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://6m10nni0kxyn" path="res://entities/enemigos/torreta.tscn" id="5_fos0i"]
+[ext_resource type="PackedScene" uid="uid://c4snpyfakpln4" path="res://entities/enemigos/bala_torreta.tscn" id="6_3dxm6"]
 
 [node name="Main" type="Node" unique_id=1484748220]
 script = ExtResource("1_cm0pq")
@@ -26,3 +28,7 @@ expand_mode = 1
 
 [node name="Player" parent="." unique_id=900235231 instance=ExtResource("1")]
 position = Vector2(413.003, 395.272)
+
+[node name="Torreta" parent="." unique_id=93162652 instance=ExtResource("5_fos0i")]
+position = Vector2(395, 143)
+bala_escena = ExtResource("6_3dxm6")

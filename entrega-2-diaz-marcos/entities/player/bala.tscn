@@ -5,3 +5,7 @@
 
 [node name="Bala" unique_id=1475269115 instance=ExtResource("1_8ir2k")]
 texture = ExtResource("2_kfik0")
+speed = 500.0
+
+[node name="Timer" parent="." index="0" unique_id=1921350751]
+wait_time = 3.0
