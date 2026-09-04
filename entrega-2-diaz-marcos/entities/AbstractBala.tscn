@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cn0toq06n4xcn"]
+
+[ext_resource type="Script" uid="uid://q6cqrdirhj8d" path="res://entities/abstract_bala.gd" id="1_vea5c"]
+
+[node name="Bala" type="Sprite2D" unique_id=1475269115]
+script = ExtResource("1_vea5c")
+
+[node name="Timer" type="Timer" parent="." unique_id=1921350751]
+one_shot = true
