@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://6m10nni0kxyn"]
+
+[ext_resource type="Texture2D" uid="uid://d2ug0mybgeebc" path="res://assets/textures/turret.png" id="1_md122"]
+[ext_resource type="Script" uid="uid://ykldisbajpdp" path="res://entities/enemigos/torreta.gd" id="2_jdoie"]
+
+[node name="Torreta" type="Sprite2D" unique_id=93162652]
+texture = ExtResource("1_md122")
+script = ExtResource("2_jdoie")
+
+[node name="PosicionDisparoTorreta" type="Marker2D" parent="." unique_id=861736238]
+position = Vector2(0, -18)
+
+[node name="Timer" type="Timer" parent="." unique_id=1763781884]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
