@@ -29,6 +29,8 @@ expand_mode = 1
 [node name="Player" parent="." unique_id=900235231 instance=ExtResource("1")]
 position = Vector2(413.003, 395.272)
 
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1944427597]
+
 [node name="Torreta" parent="." unique_id=93162652 instance=ExtResource("5_fos0i")]
 position = Vector2(395, 143)
 bala_escena = ExtResource("6_3dxm6")
