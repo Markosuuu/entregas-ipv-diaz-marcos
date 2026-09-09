@@ -3,9 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://cn0toq06n4xcn" path="res://entities/AbstractBala.tscn" id="1_8ir2k"]
 [ext_resource type="Texture2D" uid="uid://dy4fne65rpsc2" path="res://assets/textures/proyectile_player.png" id="2_kfik0"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_27kq1"]
+radius = 8.062258
+
 [node name="Bala" unique_id=1475269115 instance=ExtResource("1_8ir2k")]
-texture = ExtResource("2_kfik0")
 speed = 500.0
 
 [node name="Timer" parent="." index="0" unique_id=1921350751]
 wait_time = 3.0
+
+[node name="Sprite2D" parent="." index="1" unique_id=255719241]
+texture = ExtResource("2_kfik0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2" unique_id=537823736]
+shape = SubResource("CircleShape2D_27kq1")

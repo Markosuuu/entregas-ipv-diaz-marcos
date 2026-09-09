@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var canion:Sprite2D = $Canion

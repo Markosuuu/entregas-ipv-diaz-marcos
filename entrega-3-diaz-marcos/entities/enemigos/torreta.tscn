@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://d2ug0mybgeebc" path="res://assets/textures/turret.png" id="1_md122"]
 [ext_resource type="Script" uid="uid://ykldisbajpdp" path="res://entities/enemigos/torreta.gd" id="2_jdoie"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_27kq1"]
+radius = 300.0
+
 [node name="Torreta" type="Sprite2D" unique_id=93162652]
 texture = ExtResource("1_md122")
 script = ExtResource("2_jdoie")
@@ -12,4 +15,16 @@ position = Vector2(0, -18)
 
 [node name="Timer" type="Timer" parent="." unique_id=1763781884]
 
+[node name="ZonaDeDisparo" type="Area2D" parent="." unique_id=906250729]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDeDisparo" unique_id=286551536]
+shape = SubResource("CircleShape2D_27kq1")
+
+[node name="WhereIsPlayer" type="RayCast2D" parent="." unique_id=90119654]
+collision_mask = 2
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="ZonaDeDisparo" to="." method="_on_zona_de_disparo_body_entered"]
+[connection signal="body_exited" from="ZonaDeDisparo" to="." method="_on_zona_de_disparo_body_exited"]

@@ -11,6 +11,7 @@ size = Vector2(63, 63)
 
 [node name="Player" type="CharacterBody2D" unique_id=928494726]
 position = Vector2(-0.0635071, 0.165405)
+collision_layer = 2
 script = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=987843505]

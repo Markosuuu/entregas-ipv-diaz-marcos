@@ -20,21 +20,26 @@ anchor_bottom = 1.0
 texture = ExtResource("2")
 expand_mode = 1
 
-[node name="Floor" parent="." unique_id=394572773 instance=ExtResource("3_3dxm6")]
-
-[node name="Floor2" parent="." unique_id=1836465677 instance=ExtResource("3_3dxm6")]
-position = Vector2(799, 0)
-
-[node name="Floor3" parent="." unique_id=979543337 instance=ExtResource("3_3dxm6")]
-position = Vector2(1599, 0)
-
 [node name="Player" parent="." unique_id=900235231 instance=ExtResource("1")]
 position = Vector2(413.003, 395.272)
 DISTANCIA_SALTO = 300.0
-GRAVEDAD = 3.0
+GRAVEDAD = 4.8
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1944427597]
 
 [node name="Torreta" parent="." unique_id=93162652 instance=ExtResource("5_fos0i")]
 position = Vector2(395, 143)
 bala_escena = ExtResource("6_3dxm6")
+
+[node name="PisoGeneral" type="Node" parent="." unique_id=1452922765]
+
+[node name="Floor" parent="PisoGeneral" unique_id=394572773 instance=ExtResource("3_3dxm6")]
+
+[node name="Floor4" parent="PisoGeneral" unique_id=1382769474 instance=ExtResource("3_3dxm6")]
+position = Vector2(-430, -324)
+
+[node name="Floor2" parent="PisoGeneral" unique_id=1836465677 instance=ExtResource("3_3dxm6")]
+position = Vector2(799, 0)
+
+[node name="Floor3" parent="PisoGeneral" unique_id=979543337 instance=ExtResource("3_3dxm6")]
+position = Vector2(1599, 0)
