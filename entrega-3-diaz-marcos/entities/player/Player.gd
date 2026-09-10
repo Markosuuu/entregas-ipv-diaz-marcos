@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var FRICCION: float = 0.1
 @export var DISTANCIA_SALTO: float = 100
 @export var GRAVEDAD: float = 2
+@export var FUERZA_DE_EMPUJE: float = 200.0
 
 #var velocidad: Vector2 = Vector2.ZERO
 var contenedor_balas: Node
@@ -43,3 +44,10 @@ func _physics_process(_delta):
 	_get_inputs()
 	velocity.y += GRAVEDAD
 	self.move_and_slide()
+	self._empujar_cajas()
+
+func _empujar_cajas() -> void:
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * FUERZA_DE_EMPUJE)
