@@ -39,7 +39,7 @@ func _get_inputs():
 		velocity.y += -DISTANCIA_SALTO
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	_get_inputs()
 	velocity.y += GRAVEDAD
 	self.move_and_slide()

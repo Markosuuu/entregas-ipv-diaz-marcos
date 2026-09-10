@@ -9,6 +9,10 @@ extends Sprite2D
 var player: Node2D
 var contenedor_bala: Node
 
+func initialize(posicion: Vector2, container: Node) -> void:
+	global_position = posicion
+	set_valores(container)
+
 func set_valores(container):
 	self.contenedor_bala = container
 	timer.start()
@@ -38,5 +42,6 @@ func _on_zona_de_disparo_body_entered(body: Node2D) -> void:
 	player = body
 
 
-func _on_zona_de_disparo_body_exited(_body: Node2D) -> void:
-	player = null
+func _on_zona_de_disparo_body_exited(body: Node2D) -> void:
+	if body == player:
+		player = null

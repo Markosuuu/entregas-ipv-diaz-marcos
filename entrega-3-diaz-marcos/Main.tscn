@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bnchqqn0xduh3" path="res://assets/textures/background.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://jol00w8yagys" path="res://entities/mundo/floor.tscn" id="3_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://6m10nni0kxyn" path="res://entities/enemigos/torreta.tscn" id="5_fos0i"]
-[ext_resource type="PackedScene" uid="uid://c4snpyfakpln4" path="res://entities/enemigos/bala_torreta.tscn" id="6_3dxm6"]
+[ext_resource type="Script" uid="uid://iv0hibu1p2rw" path="res://spawner_torretas.gd" id="7_lgr22"]
 
 [node name="Main" type="Node" unique_id=1484748220]
 script = ExtResource("1_cm0pq")
@@ -27,19 +27,17 @@ GRAVEDAD = 4.8
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1944427597]
 
-[node name="Torreta" parent="." unique_id=93162652 instance=ExtResource("5_fos0i")]
-position = Vector2(395, 143)
-bala_escena = ExtResource("6_3dxm6")
-
 [node name="PisoGeneral" type="Node" parent="." unique_id=1452922765]
 
 [node name="Floor" parent="PisoGeneral" unique_id=394572773 instance=ExtResource("3_3dxm6")]
-
-[node name="Floor4" parent="PisoGeneral" unique_id=1382769474 instance=ExtResource("3_3dxm6")]
-position = Vector2(-430, -324)
+position = Vector2(396, 582)
 
 [node name="Floor2" parent="PisoGeneral" unique_id=1836465677 instance=ExtResource("3_3dxm6")]
-position = Vector2(799, 0)
+position = Vector2(1188, 582)
 
 [node name="Floor3" parent="PisoGeneral" unique_id=979543337 instance=ExtResource("3_3dxm6")]
-position = Vector2(1599, 0)
+position = Vector2(1980, 582)
+
+[node name="SpawnerTorretas" type="Node" parent="." unique_id=1790003435]
+script = ExtResource("7_lgr22")
+turret_scene = ExtResource("5_fos0i")

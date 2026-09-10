@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://d2ug0mybgeebc" path="res://assets/textures/turret.png" id="1_md122"]
 [ext_resource type="Script" uid="uid://ykldisbajpdp" path="res://entities/enemigos/torreta.gd" id="2_jdoie"]
+[ext_resource type="PackedScene" uid="uid://c4snpyfakpln4" path="res://entities/enemigos/bala_torreta.tscn" id="3_fxcyp"]
+[ext_resource type="PackedScene" uid="uid://ni31vrevnlw3" path="res://entities/enemigos/contenedor_balas.tscn" id="3_jdoie"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_27kq1"]
 radius = 300.0
@@ -9,6 +11,7 @@ radius = 300.0
 [node name="Torreta" type="Sprite2D" unique_id=93162652]
 texture = ExtResource("1_md122")
 script = ExtResource("2_jdoie")
+bala_escena = ExtResource("3_fxcyp")
 
 [node name="PosicionDisparoTorreta" type="Marker2D" parent="." unique_id=861736238]
 position = Vector2(0, -18)
@@ -24,6 +27,8 @@ shape = SubResource("CircleShape2D_27kq1")
 
 [node name="WhereIsPlayer" type="RayCast2D" parent="." unique_id=90119654]
 collision_mask = 2
+
+[node name="ContenedorBalas" parent="." unique_id=931922133 instance=ExtResource("3_jdoie")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ZonaDeDisparo" to="." method="_on_zona_de_disparo_body_entered"]

@@ -1,5 +1,8 @@
 extends Node
 
+@onready var player: Node2D = $Player
+@onready var torreta_spawner: Node = $SpawnerTorretas
+
 func _ready() -> void:
-	$Player.set_contenedor_balas(self)
-	$Torreta.set_valores(self)
+	player.set_contenedor_balas(self)
+	torreta_spawner.initialize(player)
