@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bnh2gwoq0vkuw"]
+
+[ext_resource type="Texture2D" uid="uid://d1yunpxhe0o6x" path="res://icon.png" id="1_1wjvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27kq1"]
+size = Vector2(64, 64)
+
+[node name="Caja" type="RigidBody2D" unique_id=1203634100]
+collision_layer = 4
+collision_mask = 5
+sleeping = true
+max_contacts_reported = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=429903830]
+texture = ExtResource("1_1wjvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=749996815]
+shape = SubResource("RectangleShape2D_27kq1")
