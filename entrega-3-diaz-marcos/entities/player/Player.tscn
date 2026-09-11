@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ctpemaxcik3iy"]
+
+[ext_resource type="Script" uid="uid://bmqv254iajfyu" path="res://entities/player/Player.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ysiugeunlxf6" path="res://assets/textures/player.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b4yu5v8d5yd3b" path="res://assets/textures/cannon.png" id="3_l3c03"]
+[ext_resource type="Script" uid="uid://c71dvslyk0yf5" path="res://entities/player/canion.gd" id="4_eaotn"]
+[ext_resource type="PackedScene" uid="uid://bbly232rpptjx" path="res://entities/player/bala.tscn" id="5_g3lhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27kq1"]
+size = Vector2(63, 63)
+
+[node name="Player" type="CharacterBody2D" unique_id=928494726]
+position = Vector2(-0.0635071, 0.165405)
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=987843505]
+position = Vector2(0.5635071, 0.334595)
+shape = SubResource("RectangleShape2D_27kq1")
+
+[node name="cuerpo" type="Sprite2D" parent="." unique_id=405287412]
+texture = ExtResource("2")
+
+[node name="Canion" type="Sprite2D" parent="." unique_id=1871546713]
+texture = ExtResource("3_l3c03")
+script = ExtResource("4_eaotn")
+bala_escena = ExtResource("5_g3lhm")
+
+[node name="PosicionDisparo" type="Marker2D" parent="Canion" unique_id=121889824]
+position = Vector2(15.063507, -0.165405)
