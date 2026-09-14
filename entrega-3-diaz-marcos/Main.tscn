@@ -18,11 +18,13 @@ layer = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2")
 expand_mode = 1
 
 [node name="Player" parent="." unique_id=900235231 instance=ExtResource("1")]
-position = Vector2(413.003, 395.272)
+position = Vector2(397, 323)
 DISTANCIA_SALTO = 300.0
 GRAVEDAD = 4.8
 

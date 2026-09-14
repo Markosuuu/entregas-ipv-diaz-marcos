@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var FRICCION: float = 0.1
 @export var DISTANCIA_SALTO: float = 100
 @export var GRAVEDAD: float = 2
-@export var FUERZA_DE_EMPUJE: float = 200.0
+@export var FUERZA_DE_EMPUJE: float = 80.0
 
 #var velocidad: Vector2 = Vector2.ZERO
 var contenedor_balas: Node

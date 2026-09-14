@@ -37,10 +37,9 @@ func disparar():
 func _on_eliminar_bala(bala: Bala) -> void:
 	contenedor_bala.remove_child(bala)
 	bala.queue_free()
-	
+
 func _on_zona_de_disparo_body_entered(body: Node2D) -> void:
 	player = body
-
 
 func _on_zona_de_disparo_body_exited(body: Node2D) -> void:
 	if body == player:
