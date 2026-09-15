@@ -5,7 +5,8 @@
 [node name="Bala" type="Area2D" unique_id=454916624]
 script = ExtResource("1_vea5c")
 
-[node name="Timer" type="Timer" parent="." unique_id=1921350751]
-one_shot = true
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=255719241]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1545701967]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

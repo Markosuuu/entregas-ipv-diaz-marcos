@@ -18,13 +18,17 @@ layer = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2")
 expand_mode = 1
 
 [node name="Player" parent="." unique_id=900235231 instance=ExtResource("1")]
-position = Vector2(413.003, 395.272)
-DISTANCIA_SALTO = 300.0
-GRAVEDAD = 4.8
+position = Vector2(397, 323)
+VELOCIDAD_LIMITE = 500.0
+DISTANCIA_SALTO = 500.0
+GRAVEDAD = 15.0
+FUERZA_DE_EMPUJE = 300.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1944427597]
 
@@ -34,10 +38,10 @@ GRAVEDAD = 4.8
 position = Vector2(396, 582)
 
 [node name="Floor2" parent="PisoGeneral" unique_id=1836465677 instance=ExtResource("3_3dxm6")]
-position = Vector2(1188, 582)
+position = Vector2(-398, 452)
 
 [node name="Floor3" parent="PisoGeneral" unique_id=979543337 instance=ExtResource("3_3dxm6")]
-position = Vector2(1980, 582)
+position = Vector2(1186, 457)
 
 [node name="SpawnerTorretas" type="Node" parent="." unique_id=1790003435]
 script = ExtResource("7_lgr22")
@@ -47,15 +51,12 @@ turret_scene = ExtResource("5_fos0i")
 
 [node name="Caja" parent="Objetos" unique_id=1203634100 instance=ExtResource("7_trn2v")]
 position = Vector2(646, 421)
-mass = 0.5
 lock_rotation = true
 
 [node name="Caja2" parent="Objetos" unique_id=349368005 instance=ExtResource("7_trn2v")]
-position = Vector2(646, 347)
-mass = 0.5
+position = Vector2(685, 352)
 lock_rotation = true
 
 [node name="Caja3" parent="Objetos" unique_id=357845490 instance=ExtResource("7_trn2v")]
-position = Vector2(646, 274)
-mass = 0.5
+position = Vector2(636, 275)
 lock_rotation = true
