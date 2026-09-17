@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://coqxktsvv203r" path="res://src/Main.gd" id="1"]
 [ext_resource type="Script" uid="uid://25xetcj5a1il" path="res://src/entities/enemies/TurretsSpawner.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://ct77imo5scsq5" path="res://assets/textures/background.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ctr8khlrbhmg7" path="res://assets/textures/background/Space Background.png" id="2_0vhqb"]
 [ext_resource type="PackedScene" path="res://src/environment/Floor.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://bd5hj26cc16d2" path="res://src/entities/enemies/Turret.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://dvchiotj4dluu" path="res://src/environment/Obstacle.tscn" id="6"]
@@ -12,18 +12,59 @@
 [ext_resource type="PackedScene" path="res://src/environment/Ramp.tscn" id="10"]
 [ext_resource type="PackedScene" path="res://src/environment/Platform.tscn" id="11"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0vhqb"]
+load_path = "res://.godot/imported/ruins-day.png-33ec967e367df89dbe4cfaa8d5ec3fb1.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2i6c"]
+texture = SubResource("CompressedTexture2D_0vhqb")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+4:3/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_27kq1"]
+sources/1 = SubResource("TileSetAtlasSource_k2i6c")
+
 [node name="Main" type="Node" unique_id=530448761]
 script = ExtResource("1")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=806353872]
-layer = -1
+[node name="BackgroundContainer" type="Node" parent="." unique_id=1158998026]
 
-[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=1777434069]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("3")
-expand_mode = 1
+[node name="Parallax2D" type="Parallax2D" parent="BackgroundContainer" unique_id=532337118]
+scroll_scale = Vector2(1, 0)
+repeat_size = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundContainer/Parallax2D" unique_id=1651944672]
+position = Vector2(144, 81)
+texture = ExtResource("2_0vhqb")
 
 [node name="Environment" type="Node2D" parent="." unique_id=1733618272]
 
@@ -72,7 +113,7 @@ position = Vector2(545.103, 484.106)
 [node name="Player" parent="Environment/Entities" unique_id=2106229928 instance=ExtResource("7")]
 position = Vector2(152.506, 477.622)
 
-[node name="Camera3D" type="Camera2D" parent="Environment/Entities/Player" unique_id=492903678]
+[node name="Camera2D" type="Camera2D" parent="Environment/Entities/Player" unique_id=492903678]
 
 [node name="TurretsSpawner" type="Marker2D" parent="Environment/Entities" unique_id=752932100]
 position = Vector2(1269.72, 24.3184)
@@ -105,3 +146,7 @@ position = Vector2(516.379, 398.224)
 
 [node name="Goal" parent="Environment/Objects" unique_id=764193473 instance=ExtResource("9")]
 position = Vector2(1464.51, 5.62158)
+
+[node name="TileMap" type="TileMap" parent="Environment" unique_id=2088048017]
+tile_set = SubResource("TileSet_27kq1")
+format = 2
